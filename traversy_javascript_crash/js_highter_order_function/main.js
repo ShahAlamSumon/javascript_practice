@@ -55,9 +55,46 @@ const ages = [29,28,21,32,32,40,24,25]
 //     return comapny.name;
 // })
 // console.log(companyNames);
-const agesSqur = ages.map(age => Math.sqrt(age)).map(age => age*3)
-console.log(agesSqur);
+// const agesSqur = ages.map(age => Math.sqrt(age)).map(age => age*3)
+// console.log(agesSqur);
 // inline
 // const companyNames = companies.map(comapny => comapny.name);
 // console.log(companyNames);
 
+// sort
+// const sortCompanies = companies.sort(function(c1,c2){
+//     if (c1.start > c2.start){
+//         return 1;
+//     }else{
+//         return -1;
+//     }
+// });
+// const sortCompanies = companies.sort((a , b )=>(a.start > b.start ? 1: -1));
+// console.log(sortCompanies);
+// const sortAges = ages.sort((a,b) => b-a )
+// console.log(sortAges);
+
+// reduce
+// let ageSum = 0;
+// for (let i = 0; i<ages.length;i++ ){
+//     ageSum += ages[i];
+// }
+// const ageSum = ages.reduce(function(total, age){
+//     return total + age;
+// }, 0);
+// const ageSum = ages.reduce((total, age) => total+age, 0);
+// console.log(ageSum);
+// total year for all companies
+// const totalYears = companies.reduce(function(total, company){
+//     return total + (company.end - company.start);
+// }, 0 );
+// const totalYears = companies.reduce((total,company)=> total+(company.end - company.start),0);
+// console.log(totalYears);
+
+// combine methods
+const combine = ages
+.map(age => age *2)
+.filter(age => age=>50)
+.sort((a,b)=> a- b)
+.reduce((a,b)=>a+b,0);
+console.log(combine);
